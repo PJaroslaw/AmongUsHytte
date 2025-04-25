@@ -1,0 +1,20 @@
+{{> header}}
+
+<h2>Welcome to Among Us Cabin trip Edition</h2>
+
+<h3>Roles:</h3>
+<section>
+    <div class="roles">
+        {{#roles}}
+            <section>
+                <h4 class="role-header">
+                    <p class="role-name">{{name}}</p>
+                </h4>
+                <details class="role-description">
+                    <p>{{description}}</p>
+                </details>
+            </section>
+        {{/roles}}
+    </div>
+</section>
+{{> footer}}

@@ -1,0 +1,34 @@
+{{> header}}
+
+<h2>Welcome to Among Us Cabin trip Edition</h2>
+
+<form action="/games" method="post">
+    <label for="amountOfPlayers">Amount of players:</label>
+    <input type="number" min="0" max="99" name="amountOfPlayers" id="amountOfPlayers"><br><br>
+    <label for="hunter">Hunters:</label>
+    <input type="checkbox" name="hunter" id="hunter">
+    <label for="medic">Medics:</label>
+    <input type="checkbox" name="medic" id="medic">
+    <input type="submit" name="Create game" id="create game">
+</form>
+
+<div class="games">
+    {{#games}}
+        <section>
+            <header class="game-header">
+                <h2 class="game-date">{{date}}</h2>
+            </header>
+            <details class="game-playersAmount">
+                <p>Amount of players: {{amountOfPlayers}}</p>
+                <p>Roles:</p>
+                {{#roles}}
+                    <ul>
+                        <li>{{name}}</li>
+                    </ul>
+                {{/roles}}
+            </details>
+        </section>
+    {{/games}}
+</div>
+
+{{> footer}}
